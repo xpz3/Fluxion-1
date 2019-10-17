@@ -16,7 +16,7 @@ CaptivePortalAuthenticationMethodsInfo=(
 # ============= < Virtual Network Configuration > ============ #
 # To avoid collapsing with an already existing network,
 # we'll use a somewhat uncommon network and server IP.
-CaptivePortalGatewayAddress="192.168.254.1"
+CaptivePortalGatewayAddress="192.169.254.1"
 CaptivePortalGatewayNetwork=${CaptivePortalGatewayAddress%.*}
 
 
@@ -751,10 +751,10 @@ index-file.names = (
 
   # Create a temporary hosts file to be used with dnsspoof
   echo "\
-	${CaptivePortalGatewayAddress}\t*.*
-	172.217.5.238\tgoogle.com
-	172.217.13.78\tclients3.google.com
-	172.217.13.78\tclients4.google.com
+${CaptivePortalGatewayAddress}	*.*
+172.217.5.238	google.com
+172.217.13.78	clients3.google.com
+172.217.13.78	clients4.google.com
 " >"$FLUXIONWorkspacePath/hosts"
 
   #chmod +x "$FLUXIONWorkspacePath/fluxion_captive_portal_dns.py"
